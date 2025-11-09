@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis - EmotiAI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>EmotiAI</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/emotion-detection">Emotion Detection</a></li>
+                <li><a href="/sentiment-analysis" class="active">Sentiment Analysis</a></li>
+                <li><a href="/adaptive-responses">Adaptive Responses</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Sentiment Analysis</h1>
+                <p>Deep analysis of text sentiment with entity recognition and topic extraction</p>
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <div class="container">
+                <div class="tool-container">
+                    <div class="input-section">
+                        <h3>Enter Text for Sentiment Analysis</h3>
+                        <textarea id="sentimentText" placeholder="Enter text to analyze sentiment, entities, and topics..." rows="6"></textarea>
+                        <div class="quick-examples">
+                            <h4>Quick Examples:</h4>
+                            <div class="example-buttons">
+                                <button class="example-btn" data-text="I absolutely love this product! It's amazing and has changed my life for the better.">Positive Review</button>
+                                <button class="example-btn" data-text="This is the worst service I've ever experienced. The quality is terrible and I want a refund immediately.">Negative Feedback</button>
+                                <button class="example-btn" data-text="The company announced quarterly results today. Revenue increased by 15% compared to last year.">Neutral News</button>
+                            </div>
+                        </div>
+                        <button id="analyzeSentimentBtn" class="btn btn-primary">
+                            <i class="fas fa-chart-line"></i> Analyze Sentiment
+                        </button>
+                    </div>
+
+                    <div class="results-section">
+                        <div id="sentimentResults" class="results-container hidden">
+                            <h3>Sentiment Analysis Results</h3>
+                            
+                            <div class="sentiment-score">
+                                <div class="score-display">
+                                    <div class="sentiment-gauge">
+                                        <div id="sentimentNeedle" class="needle"></div>
+                                    </div>
+                                    <div class="score-details">
+                                        <h4 id="sentimentLabel">Positive</h4>
+                                        <p id="sentimentValue">Score: 0.85</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="analysis-details">
+                                <div class="detail-section">
+                                    <h4>Detected Entities</h4>
+                                    <div id="entitiesList" class="entities-list">
+                                        <!-- Entities will appear here -->
+                                    </div>
+                                </div>
+
+                                <div class="detail-section">
+                                    <h4>Related Topics</h4>
+                                    <div id="topicsList" class="topics-list">
+                                        <!-- Topics will appear here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="sentimentLoading" class="loading hidden">
+                            <div class="spinner"></div>
+                            <p>Analyzing sentiment...</p>
+                        </div>
+
+                        <div id="sentimentError" class="error hidden">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p>Error analyzing sentiment. Please try again.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 EmotiAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/sentiment-analysis.js"></script>
+</body>
+</html>

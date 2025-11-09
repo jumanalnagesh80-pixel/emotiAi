@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Responses - EmotiAI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>EmotiAI</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/emotion-detection">Emotion Detection</a></li>
+                <li><a href="/sentiment-analysis">Sentiment Analysis</a></li>
+                <li><a href="/adaptive-responses" class="active">Adaptive Responses</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Adaptive Responses</h1>
+                <p>Get emotionally intelligent AI responses tailored to your input and context</p>
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <div class="container">
+                <div class="tool-container">
+                    <div class="input-section">
+                        <h3>Start a Conversation</h3>
+                        <div class="form-group">
+                            <label for="userMessage">Your Message:</label>
+                            <textarea id="userMessage" placeholder="Type your message here..." rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contextInput">Context (Optional):</label>
+                            <input type="text" id="contextInput" placeholder="E.g., work stress, relationship issue, exciting news...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emotionSelect">Emotion (Optional):</label>
+                            <select id="emotionSelect">
+                                <option value="">Auto-detect</option>
+                                <option value="joy">Joy 😊</option>
+                                <option value="sadness">Sadness 😢</option>
+                                <option value="anger">Anger 😠</option>
+                                <option value="fear">Fear 😨</option>
+                                <option value="surprise">Surprise 😲</option>
+                                <option value="love">Love ❤️</option>
+                            </select>
+                        </div>
+
+                        <div class="conversation-starters">
+                            <h4>Conversation Starters:</h4>
+                            <div class="starter-buttons">
+                                <button class="starter-btn" data-message="I'm feeling really stressed about work lately." data-context="work stress">Work Stress</button>
+                                <button class="starter-btn" data-message="I just got some amazing news that I want to share!" data-context="exciting news">Good News</button>
+                                <button class="starter-btn" data-message="I'm having trouble with a relationship in my life." data-context="relationship issue">Relationship Issue</button>
+                                <button class="starter-btn" data-message="I'm feeling uncertain about the future and what to do next." data-context="life decisions">Life Decisions</button>
+                            </div>
+                        </div>
+
+                        <button id="generateResponseBtn" class="btn btn-primary">
+                            <i class="fas fa-robot"></i> Get AI Response
+                        </button>
+                    </div>
+
+                    <div class="results-section">
+                        <div id="conversationHistory" class="conversation-container">
+                            <div class="conversation-header">
+                                <h3>Conversation</h3>
+                                <button id="clearConversation" class="btn btn-outline">Clear</button>
+                            </div>
+                            <div id="messageHistory" class="message-history">
+                                <div class="ai-message">
+                                    <div class="message-avatar">AI</div>
+                                    <div class="message-content">
+                                        <p>Hello! I'm your emotionally intelligent AI assistant. How can I help you today? Feel free to share what's on your mind.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="responseLoading" class="loading hidden">
+                            <div class="spinner"></div>
+                            <p>Generating response...</p>
+                        </div>
+
+                        <div id="responseError" class="error hidden">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p>Error generating response. Please try again.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 EmotiAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/adaptive-responses.js"></script>
+</body>
+</html>
